@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- İnternet — serverlə əlaqə -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Lokasiya -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <!-- Ön plan servisi (davamlı lokasiya izləmə üçün) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+
+    <!-- Zəng qeydləri (metadata: nömrə/vaxt/müddət — məzmun deyil) -->
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+
+    <!-- Cihaz yenidən başladıqda servisi bərpa etmək üçün -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:theme="@style/Theme.AileNezareti"
+        android:usesCleartextTraffic="false">
+
+        <!-- Tək ekran: cütləmə (pairing) + status. Uşaq tətbiqi açanda bunu görür. -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Lokasiya izləmə ön plan servisi -->
+        <service
+            android:name=".LocationTrackingService"
+            android:exported="false"
+            android:foregroundServiceType="location" />
+
+        <!-- Cihaz yenidən başladıqda servisi bərpa et -->
+        <receiver
+            android:name=".BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Yeni tətbiq quraşdırıldıqda xəbərdarlıq -->
+        <receiver
+            android:name=".PackageAddedReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Vaxtaşırı yüngül "aktivdir" siqnalı (last_seen təzələnməsi üçün) -->
+        <!-- WorkManager kod daxilində qeydiyyatdan keçir, manifestdə əlavəyə ehtiyac yoxdur -->
+
+    </application>
+</manifest>

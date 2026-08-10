@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="28dp"
+        android:gravity="center_horizontal">
+
+        <!-- ==================== CÜTLƏMƏ QRUPU ==================== -->
+        <LinearLayout
+            android:id="@+id/pairingGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="80dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/ink"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/pairingExplainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="15sp"
+                android:textColor="@color/slate"
+                android:gravity="center"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tokenInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:hint="@string/pairing_code_hint">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tokenEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/confirmButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/confirm_pairing"
+                android:padding="14dp"/>
+        </LinearLayout>
+
+        <!-- ==================== STATUS QRUPU (UŞAĞIN GÖRDÜYÜ) ==================== -->
+        <LinearLayout
+            android:id="@+id/statusGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="100dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shield_emoji"
+                android:textSize="48sp"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/statusMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/ink"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:id="@+id/setupList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="24dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

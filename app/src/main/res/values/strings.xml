@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Təhlükəsizlik</string>
+
+    <string name="shield_emoji">🛡️</string>
+
+    <!-- Cütləmə ekranı -->
+    <string name="pairing_explainer_baked">Bu tətbiq valideyninizin təhlükəsizlik sisteminə bağlıdır. Davam etmək üçün aşağıdakı düyməyə basın.</string>
+    <string name="pairing_explainer_manual">Valideyniniz sizə verdiyi kodu aşağı daxil edin.</string>
+    <string name="pairing_code_hint">Cütləmə kodu</string>
+    <string name="confirm_pairing">Davam et</string>
+    <string name="enter_code_first">Əvvəlcə kodu daxil edin</string>
+    <string name="pairing_failed">Kod düzgün deyil və ya serverə qoşulmaq mümkün olmadı</string>
+
+    <!-- Status ekranı (uşağın gördüyü) -->
+    <string name="status_all_good">Təhlükəsizliyiniz nəzarət altındadır.\nBu tətbiqi bağlaya bilərsiniz.</string>
+    <string name="status_setup_needed">Bir neçə addım qalıb — davam etmək üçün aşağıdakılara toxunun:</string>
+    <string name="step_location">Yer icazəsini ver</string>
+    <string name="step_background_location">"Hər zaman icazə ver"-i seç</string>
+    <string name="step_call_log">Zəng qeydi icazəsini ver</string>
+
+    <!-- Bildiriş -->
+    <string name="notif_title">Təhlükəsizlik aktivdir</string>
+    <string name="notif_body">Təhlükəsizlik izləməsi işləyir</string>
+</resources>
